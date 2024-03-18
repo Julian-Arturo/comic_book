@@ -1,7 +1,5 @@
 # Comic Book App
 
-![Comic Book App](link_to_screenshot)
-
 ## Description
 
 The Comic Book App is a mobile application developed in Flutter that allows users to explore new, popular, and trending comics. The application also includes a search feature that enables users to find comics by name. Additionally, Firebase authentication has been integrated to provide a secure experience for users.

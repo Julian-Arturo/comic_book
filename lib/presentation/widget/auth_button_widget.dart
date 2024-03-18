@@ -1,31 +1,30 @@
 import 'package:comic_book/presentation/widget/text_widget.dart';
-import 'package:comic_book/utils/dimensi_extension.dart';
-import 'package:comic_book/utils/routes.dart';
+import 'package:comic_book/utils/dimensions_extension.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class AuthButtonWidget extends StatelessWidget {
   const AuthButtonWidget({
     super.key,
-    required this.context,
     required this.label,
     required this.color,
     required this.textColor,
-    required this.status,
+    required this.onTap,
+    this.height,
+    this.width,
+    this.margin,
   });
 
-  final BuildContext context;
   final String label;
   final Color color;
   final Color textColor;
-  final bool status;
-
+  final void Function()? onTap;
+  final double? height;
+  final double? width;
+  final EdgeInsetsGeometry? margin;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: status
-          ? () => context.push(Routes.loginPage)
-          : () => context.push(Routes.registerPage),
+      onTap: onTap,
       child: Material(
         elevation: 4,
         color: color,
@@ -37,8 +36,9 @@ class AuthButtonWidget extends StatelessWidget {
         ),
         child: Container(
           alignment: Alignment.center,
-          height: context.height(.07),
-          width: context.width(.4),
+          height: height ?? context.height(.07),
+          width: width ?? context.width(.4),
+          margin: margin,
           child: TextWidget(
             size: 22,
             content: label,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-//parameterized title widget
 class TextWidget extends StatelessWidget {
   final String content;
   final double? hrz;
@@ -13,6 +12,7 @@ class TextWidget extends StatelessWidget {
   final double? height;
   final FontWeight? fontWeight;
   final String? fontFamily;
+
   const TextWidget({
     super.key,
     required this.content,
@@ -34,8 +34,8 @@ class TextWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: hrz ?? 0, vertical: vert ?? 0),
       child: Text(
         content,
-        overflow: overflow,
-        maxLines: maxLines,
+        overflow: overflow ?? TextOverflow.clip,
+        maxLines: maxLines ?? 1,
         textAlign: textAlign ?? TextAlign.center,
         style: TextStyle(
           fontFamily: fontFamily,

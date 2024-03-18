@@ -1,4 +1,4 @@
-import 'package:comic_book/utils/routes.dart';
+import 'package:comic_book/utils/constant/routes.dart';
 import 'package:comic_book/utils/theme.dart' as t;
 import 'package:flutter/material.dart';
 
